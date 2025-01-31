@@ -28,9 +28,9 @@ include 'includes/dbconn.php';
         <th>Address</th>
         <th>Contact</th>
         <th>
-            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
+            <a class="btn btn-success" href="addStudent.php?>" data-toggle="tooltip" title="View">
                 + Student
-            </a>
+            </a>   
         </th>
       </tr>
     </thead>
@@ -55,7 +55,7 @@ include 'includes/dbconn.php';
             </a>
             <a class="btn btn-danger" href="deleteStudentSql.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
                 <i class="bi bi-trash3"></i>
-            </a>
+            </a> 
           </td>
         </tr>
       <?php
