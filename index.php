@@ -50,7 +50,7 @@ include 'includes/dbconn.php';
           <td><?php echo $row['Address']; ?></td>
           <td><?php echo $row['Contact']; ?></td>
           <td>
-            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
+            <a class="btn btn-success" href="updateStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
                 <i class="bi bi-pencil-fill"></i>
             </a>
             <a class="btn btn-danger" href="deleteStudentSql.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
