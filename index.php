@@ -27,7 +27,11 @@ include 'includes/dbconn.php';
         <th>Gender</th>
         <th>Address</th>
         <th>Contact</th>
-        <th>Add</th>
+        <th>
+            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
+                + Student
+            </a>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -47,10 +51,10 @@ include 'includes/dbconn.php';
           <td><?php echo $row['Contact']; ?></td>
           <td>
             <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
-              <i class="bi bi-eye-fill"></i>
+                <i class="bi bi-pencil-fill"></i>
             </a>
-            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
-              <i class="bi bi-eye-fill"></i>
+            <a class="btn btn-danger" href="deleteStudentSql.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
+                <i class="bi bi-trash3"></i>
             </a>
           </td>
         </tr>
