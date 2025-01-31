@@ -1,7 +1,19 @@
 <?php
-include '../includes/dbconn.php';
-session_start();
+include 'includes/dbconn.php';
+$studentID = $_GET['studentID'];
+
+$sql = "SELECT * FROM `students-info` WHERE `studentID` = '{$studentID}'";
+$result = mysqli_query($conn, $sql);
+$row = $result->fetch_assoc();
+$studentID = $row['studentID'];
+$studentNo= $row['studentNo'];
+$name = $row['Name'];
+$age = $row['Age'];
+$gender = $row['Gender'];
+$address = $row['Address'];
+$contact = -$row['Contact'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,68 +38,38 @@ session_start();
         <p class="text-start fw-bold fs-3 my-2">Edit User - See IDS Below</p>
         <div class="container">
             <div class="row justify-content-center">
-                <form class="text-start" method="POST" action="./sql/update.php">
+                <form class="text-start" method="GET" action="./update.php?studentID=<?php echo $row['studentID']; ?>">
                     <div class="mb-3">
-                        <label for="inputID" class="form-label">ID</label>
-                        <input type="Text" class="form-control" id="inputID" name="inputID" required>
+                        <label for="inputNo" class="form-label">Student No</label>
+                        <input type="Text" class="form-control" id="inputNo" name="inputNo" value="<?php echo $studentNo; ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Name</label>
+                        <input type="Text" class="form-control" id="inputName" name="inputName" value="<?php echo $name; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputAge" class="form-label">Age</label>
-                        <input type="Text" class="form-control" id="inputAge" name="inputAge" required>
+                        <input type="Text" class="form-control" id="inputAge" name="inputAge" value="<?php echo $age; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputGender" class="form-label">Gender</label>
-                        <input type="Text" class="form-control" id="inputGender" name="inputGender" required>
+                        <input type="Text" class="form-control" id="inputGender" name="inputGender" value="<?php echo $gender; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputAddress" class="form-label">Address</label>
-                        <input type="Text" class="form-control" id="inputAddress" name="inputAddress" required>
+                        <input type="Text" class="form-control" id="inputAddress" name="inputAddress" value="<?php echo $address; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputContact" class="form-label">Contact</label>
-                        <input type="number" class="form-control" id="inputContact" name="inputContact" required>
+                        <input type="number" class="form-control" id="inputContact" name="inputContact" value="<?php echo $contact; ?>" required>
                     </div>
                     <div class="mb-3 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary" onclick="checkPosition();">Update</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <table id="studentsTable" class="table table-hover table-dark" style="width:100%">
-    <thead>
-      <tr>
-        <th>Students ID</th>
-        <th>Student No.</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Gender</th>
-        <th>Address</th>
-        <th>Contact</th>
-        <th>Add</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-      $sql = 'SELECT * FROM `students-info`';
-      $result = mysqli_query($conn, $sql);
-
-      while ($row = mysqli_fetch_assoc($result)) {
-      ?>
-        <tr>
-          <td><?php echo $row['studentID']; ?></td>
-          <td><?php echo $row['studentNo']; ?></td>
-          <td><?php echo $row['Name']; ?></td>
-          <td><?php echo $row['Age']; ?></td>
-          <td><?php echo $row['Gender']; ?></td>
-          <td><?php echo $row['Address']; ?></td>
-          <td><?php echo $row['Contact']; ?></td>
-        </tr>
-      <?php
-      }
-      ?>
-    </tbody>
   </table>
 
 
