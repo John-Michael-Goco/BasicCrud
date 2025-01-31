@@ -17,7 +17,7 @@ session_start();
     <!--Container Main start-->
     <div class="bg-body text-center">
         <div class="text-start">
-        <a href="allUsers.php" class="btn btn-primary mt-3">Back</a>
+        <a href="index.php" class="btn btn-primary mt-3">Back</a>
         </div>
         <p class="text-start fw-bold fs-3 my-2">Add New User</p>
         <div class="container">
@@ -37,10 +37,7 @@ session_start();
                     </div>
                     <div class="mb-3">
                         <label for="inputGender" class="form-label">Gender</label>
-                        <select class="form-select" name="inputGender" required>
-                            <option value="Male">Male</option>
-                            <option value="Female ">Female</option>
-                        </select>
+                        <input type="Text" class="form-control" id="inputGender" name="inputGender" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputAddress" class="form-label">Address</label>
@@ -52,7 +49,7 @@ session_start();
                     </div>
                     
                     <div class="mb-3 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary" onclick="checkPosition();">Create</button>
+                        <button type="submit" class="btn btn-primary">Create</button>
                     </div>
                 </form>
             </div>
