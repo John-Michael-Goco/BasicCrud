@@ -1,7 +1,6 @@
 <?php
 include 'includes/dbconn.php';
 
-$studentID = $_POST['inputstudentID'];
 $studentNo = $_POST['inputstudentNo'];
 $Name = $_POST['inputName'];
 $Age = $_POST['inputAge'];
