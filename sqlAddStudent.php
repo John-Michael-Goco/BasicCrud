@@ -1,14 +1,15 @@
 <?php
 include 'includes/dbconn.php';
 
-$name = $_POST['inputName'];
-$inputContact = $_POST['inputContact'];
-$inputStatus = $_POST['inputStatus'];
-$inputEmail = $_POST['inputEmail'];
-$inputPassword = $_POST['inputPassword'];
-$inputPosition = $_POST['inputPosition'];
+$studentID = $_POST['inputstudentID'];
+$studentNo = $_POST['inputstudentNo'];
+$Name = $_POST['inputName'];
+$Age = $_POST['inputAge'];
+$Gender = $_POST['inputGender'];
+$Address = $_POST['inputAddress'];
+$Contact = $_POST['inputContact'];
 
-$sql = "INSERT INTO `users` (Name, Contact, Email, Password, Position, Status) VALUES ('$name', '$inputContact', '$inputEmail', '$inputPassword', '$inputPosition', '$inputStatus')";
+$sql = "INSERT INTO `students-info` (studentNo ,Name, Age, Gender, Address, Contact) VALUES ('$studentNo', '$Name', '$Age', '$Gender', '$Address', '$Contact')";
 
 $result = mysqli_query($conn, $sql);
 
