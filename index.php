@@ -12,6 +12,9 @@ include 'includes/dbconn.php';
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- Icons -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <table id="studentsTable" class="table table-hover table-dark" style="width:100%">
@@ -42,7 +45,14 @@ include 'includes/dbconn.php';
           <td><?php echo $row['Gender']; ?></td>
           <td><?php echo $row['Address']; ?></td>
           <td><?php echo $row['Contact']; ?></td>
-          <td>Update and Delete</td>
+          <td>
+            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
+              <i class="bi bi-eye-fill"></i>
+            </a>
+            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
+              <i class="bi bi-eye-fill"></i>
+            </a>
+          </td>
         </tr>
       <?php
       }
