@@ -23,40 +23,32 @@ session_start();
         <div class="text-start">
         <a href="../index.php" class="btn btn-primary mt-3">Back</a>
         </div>
-        <p class="text-start fw-bold fs-3 my-2">Add New User</p>
+        <p class="text-start fw-bold fs-3 my-2">Edit User - See IDS Below</p>
         <div class="container">
             <div class="row justify-content-center">
                 <form class="text-start" method="POST" action="./sql/update.php">
                     <div class="mb-3">
-                        <label for="inputName" class="form-label">Name</label>
-                        <input type="Text" class="form-control" id="inputName" name="inputName" required>
+                        <label for="inputID" class="form-label">ID</label>
+                        <input type="Text" class="form-control" id="inputID" name="inputID" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAge" class="form-label">Age</label>
+                        <input type="Text" class="form-control" id="inputAge" name="inputAge" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputGender" class="form-label">Gender</label>
+                        <input type="Text" class="form-control" id="inputGender" name="inputGender" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="Text" class="form-control" id="inputAddress" name="inputAddress" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputContact" class="form-label">Contact</label>
                         <input type="number" class="form-control" id="inputContact" name="inputContact" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="inputStatus" class="form-label">Status</label>
-                        <input type="text" class="form-control" id="inputStatus" name="inputStatus" readonly value="Active">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPosition" class="form-label">Position</label>
-                        <select class="form-select" name="inputPosition" required>
-                            <option value="Manager">Manager</option>
-                            <option value="Inventory Clerk">Inventory Clerk</option>
-                            <option value="Cashier" selected>Cashier</option>
-                        </select>
-                    </div>
                     <div class="mb-3 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary" onclick="checkPosition();">Create</button>
+                        <button type="submit" class="btn btn-primary" onclick="checkPosition();">Update</button>
                     </div>
                 </form>
             </div>
@@ -91,14 +83,6 @@ session_start();
           <td><?php echo $row['Gender']; ?></td>
           <td><?php echo $row['Address']; ?></td>
           <td><?php echo $row['Contact']; ?></td>
-          <td>
-            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
-              <i class="bi bi-eye-fill"></i>
-            </a>
-            <a class="btn btn-success" href="addStudent.php?studentID=<?php echo $row['studentID']; ?>" data-toggle="tooltip" title="View">
-              <i class="bi bi-eye-fill"></i>
-            </a>
-          </td>
         </tr>
       <?php
       }
