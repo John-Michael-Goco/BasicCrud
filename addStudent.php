@@ -7,7 +7,11 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Basic Crud</title>
+     <!-- BS5 -->
+     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <!--Container Main start-->
@@ -18,35 +22,35 @@ session_start();
         <p class="text-start fw-bold fs-3 my-2">Add New User</p>
         <div class="container">
             <div class="row justify-content-center">
-                <form class="text-start" method="POST" action="sqlAddUser.php">
+                <form class="text-start" method="POST" action="sqlAddStudent.php">
+                    <div class="mb-3">
+                        <label for="inputstudentNo" class="form-label">Student No.</label>
+                        <input type="Text" class="form-control" id="inputstudentNo" name="inputstudentNo" required>
+                    </div>
                     <div class="mb-3">
                         <label for="inputName" class="form-label">Name</label>
                         <input type="Text" class="form-control" id="inputName" name="inputName" required>
                     </div>
                     <div class="mb-3">
+                        <label for="inputAge" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="inputAge" name="inputAge" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputGender" class="form-label">Gender</label>
+                        <select class="form-select" name="inputGender" required>
+                            <option value="Male">Male</option>
+                            <option value="Female ">Female</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <input type="Text" class="form-control" id="inputAddress" name="inputAddress" required>
+                    </div>
+                    <div class="mb-3">
                         <label for="inputContact" class="form-label">Contact</label>
                         <input type="number" class="form-control" id="inputContact" name="inputContact" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="inputStatus" class="form-label">Status</label>
-                        <input type="text" class="form-control" id="inputStatus" name="inputStatus" readonly value="Active">
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPosition" class="form-label">Position</label>
-                        <select class="form-select" name="inputPosition" required>
-                            <option value="Manager">Manager</option>
-                            <option value="Inventory Clerk">Inventory Clerk</option>
-                            <option value="Cashier" selected>Cashier</option>
-                        </select>
-                    </div>
+                    
                     <div class="mb-3 d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary" onclick="checkPosition();">Create</button>
                     </div>
