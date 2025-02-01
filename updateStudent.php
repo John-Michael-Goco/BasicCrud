@@ -38,10 +38,10 @@ $contact = -$row['Contact'];
         <p class="text-start fw-bold fs-3 my-2">Edit User - See IDS Below</p>
         <div class="container">
             <div class="row justify-content-center">
-                <form class="text-start" method="GET" action="./update.php?studentID=<?php echo $row['studentID']; ?>">
+                <form class="text-start" method="POST" action="./update.php?studentID=<?php echo $row['studentID']; ?>">
                     <div class="mb-3">
-                        <label for="inputNo" class="form-label">Student No</label>
-                        <input type="Text" class="form-control" id="inputNo" name="inputNo" value="<?php echo $studentNo; ?>" required>
+                        <label for="inputStudentNo" class="form-label">Student No</label>
+                        <input type="Text" class="form-control" id="inputStudentNo" name="inputStudentNo" value="<?php echo $studentNo; ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="inputName" class="form-label">Name</label>
