@@ -15,8 +15,30 @@ include 'includes/dbconn.php';
     <!-- Icons -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
+
+    <style>
+        .card-header {
+          background-color:rgb(48, 48, 48);
+          color: #fff;
+        }
+
+        .card {
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: 0.3s;
+        }
+    </style>
+  </head>
 <body>
+
+<div class="container-fluid px-5 ">
+    <div class="card mt-4 shadow">
+    <div class="card-header">
+            <h4 class="mb-0">View Students Data
+            </h4>
+
+        </div>
+        <div class="card-body">
+
 <table id="studentsTable" class="table table-hover table-dark" style="width:100%">
     <thead>
       <tr>
@@ -63,5 +85,10 @@ include 'includes/dbconn.php';
       ?>
     </tbody>
   </table>
+
+      </div>
+      </div>
+      </div>
+
 </body>
 </html>
